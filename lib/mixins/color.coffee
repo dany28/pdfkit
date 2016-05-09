@@ -79,6 +79,8 @@ module.exports =
   strokeColor: (color, opacity = 1) ->
     set = @_setColor color, yes
     @strokeOpacity opacity if set
+    # save this for text wrapper, which needs to reset 
+    @_strokeColor = [color, opacity]
     return this
      
   opacity: (opacity) ->
